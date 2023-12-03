@@ -33,7 +33,7 @@ public class JetsApplication {
 
 		do {
 			displayMenu();
-			System.out.print("Enter your choice: \n");
+			System.out.print("\nEnter your choice: \n");
 			choice = scanner.nextInt();
 			scanner.nextLine(); // Consume the newline character
 
@@ -72,11 +72,14 @@ public class JetsApplication {
 					case 3:
 						addCargoJet(airfield, scanner);
 						break;
+					case 4:
+						System.out.println("\nReturning to main menu...");
+						break;
 					default:
 						System.out.println("Invalid choice. Please try again.");
 						break;
 					}
-				} while (jetChoice != 1 && jetChoice != 2 && jetChoice != 3);
+				} while (jetChoice != 4);
 				break;
 			case 8:
 				removeJetFromFleet(airfield, scanner);
@@ -208,6 +211,7 @@ public class JetsApplication {
 		System.out.println("1. Add Passenger Jet");
 		System.out.println("2. Add Fighter Jet");
 		System.out.println("3. Add Cargo Jet");
+		System.out.println("4. Return to main menu");
 	}
 
 	private void addPassengerJet(AirField airfield, Scanner scanner) {

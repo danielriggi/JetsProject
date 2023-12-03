@@ -73,7 +73,7 @@ public abstract class Jet {
 	}   
 	
 	public String toString() {
-		return String.format("The %s%nspeed: %.2f MPH, range: %.2f miles, price: $%.2f%npiloted by: %s%n", model, speed,
+		return String.format("The %s%nspeed: %.2f MPH, range: %.2f miles, price: $%.2f%nPiloted by: %s%n", model, speed,
 				range, price, pilot.toString());
 	}
     
