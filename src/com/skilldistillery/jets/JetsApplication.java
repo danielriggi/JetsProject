@@ -79,7 +79,7 @@ public class JetsApplication {
 						System.out.println("Invalid choice. Please try again.");
 						break;
 					}
-				} while (jetChoice != 1 && jetChoice !=2 && jetChoice != 3 && jetChoice != 4);
+				} while (jetChoice != 1 && jetChoice != 2 && jetChoice != 3 && jetChoice != 4);
 				break;
 			case 8:
 				removeJetFromFleet(airfield, scanner);
@@ -193,7 +193,7 @@ public class JetsApplication {
 			System.out.println("\nNot enough fighters in the fleet for a dogfight");
 			return;
 		}
-		
+
 		System.out.println("\nStarting the dogfight!!!");
 
 		for (int i = 0; i < fighterJets.size(); i++) {
@@ -215,9 +215,9 @@ public class JetsApplication {
 	}
 
 	private void addPassengerJet(AirField airfield, Scanner scanner) {
-	    // Prompt user for passenger jet details (model, speed, range, price)
-	    // Create a new PassengerJet instance with the provided details
-	    // Call addJet to add the new jet to the airfield
+		// Prompt user for passenger jet details (model, speed, range, price)
+		// Create a new PassengerJet instance with the provided details
+		// Call addJet to add the new jet to the airfield
 		System.out.println("Enter the passenger jet model: ");
 		String model = scanner.next();
 		System.out.println("Enter the passenger jet speed (MPh): ");
@@ -228,15 +228,14 @@ public class JetsApplication {
 		Double price = scanner.nextDouble();
 		PassengerJet jet = new PassengerJet(model, speed, range, price, new Pilot().generateRandomPilot());
 		airfield.addJet(jet);
-		
-		
-		
+
 	}
 
 	private void addFighterJet(AirField airfield, Scanner scanner) {
-	    // Prompt user for passenger jet details (model, speed, range, price, attackPower, hitPoints)
-	    // Create a new FighterJet instance with the provided details
-	    // Call addJet to add the new jet to the airfield
+		// Prompt user for passenger jet details (model, speed, range, price,
+		// attackPower, hitPoints)
+		// Create a new FighterJet instance with the provided details
+		// Call addJet to add the new jet to the airfield
 		System.out.println("Enter the fighter jet model: ");
 		String model = scanner.next();
 		System.out.println("Enter the fighter jet speed (MPH): ");
@@ -249,14 +248,16 @@ public class JetsApplication {
 		Double attackPower = scanner.nextDouble();
 		System.out.println("Enter the fighter jet hit points: ");
 		Double hitPoints = scanner.nextDouble();
-		FighterJet jet = new FighterJet(model, speed, range, price, new Pilot().generateRandomPilot(), attackPower, hitPoints);
+		FighterJet jet = new FighterJet(model, speed, range, price, new Pilot().generateRandomPilot(), attackPower,
+				hitPoints);
 		airfield.addJet(jet);
 	}
 
 	private void addCargoJet(AirField airfield, Scanner scanner) {
-	    // Prompt user for cargo jet details (model, speed, range, price, carrying capacity)
-	    // Create a new CargoJet instance with the provided details
-	    // Call addJetto add the new jet to the airfield
+		// Prompt user for cargo jet details (model, speed, range, price, carrying
+		// capacity)
+		// Create a new CargoJet instance with the provided details
+		// Call addJetto add the new jet to the airfield
 		System.out.println("Enter the cargo jet model: ");
 		String model = scanner.next();
 		System.out.println("Enter the cargo jet speed (MPH): ");
@@ -280,9 +281,9 @@ public class JetsApplication {
 			System.out.println("\nInvalid choice.");
 			return;
 		}
-		airfield.getFleet().remove(choice-1);		
+		airfield.getFleet().remove(choice - 1);
 	}
-	
+
 	private void flyIndividualJet(AirField airfield, Scanner scanner) {
 		System.out.println("\nChoose a jet to fly from the fleet (type in the jet number): ");
 		listFleet(airfield);
@@ -290,45 +291,28 @@ public class JetsApplication {
 		if (choice > airfield.getFleet().size() || choice <= 0) {
 			System.out.println("\nInvalid choice.");
 			return;
-		} 
-		airfield.getFleet().get(choice-1).fly();
+		}
+		airfield.getFleet().get(choice - 1).fly();
 	}
 
-    private void hirePilot(AirField airfield, Scanner scanner) {
-    	System.out.println("Enter the pilots first name: ");
-    	String firstName = scanner.nextLine();
-    	System.out.println("Enter the pilots last name: ");
-    	String lastName = scanner.nextLine();
-    	System.out.println("Enter the pilots age: ");
-    	int age = scanner.nextInt();
-    	System.out.println("Enter the pilots salary: ");
-    	double salary = scanner.nextDouble();
-    	Pilot newPilot = new Pilot(firstName, lastName, age, salary);
-    	System.out.println("Pick the aircraft (enter the plane number) for this pilot:");
-    	listFleet(airfield);
+	private void hirePilot(AirField airfield, Scanner scanner) {
+		System.out.println("Enter the pilots first name: ");
+		String firstName = scanner.nextLine();
+		System.out.println("Enter the pilots last name: ");
+		String lastName = scanner.nextLine();
+		System.out.println("Enter the pilots age: ");
+		int age = scanner.nextInt();
+		System.out.println("Enter the pilots salary: ");
+		double salary = scanner.nextDouble();
+		Pilot newPilot = new Pilot(firstName, lastName, age, salary);
+		System.out.println("Pick the aircraft (enter the plane number) for this pilot:");
+		listFleet(airfield);
 		int choice = scanner.nextInt();
 		if (choice > airfield.getFleet().size() || choice <= 0) {
 			System.out.println("\nInvalid choice.");
 			return;
-		} 
-		airfield.getFleet().get(choice-1).setPilot(newPilot);
-    	
-    	
-    }
+		}
+		airfield.getFleet().get(choice - 1).setPilot(newPilot);
+
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
