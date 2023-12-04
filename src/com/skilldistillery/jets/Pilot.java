@@ -24,7 +24,7 @@ public class Pilot {
 		RandomNameGenerator rng = new RandomNameGenerator();
 		Random random = new Random();
 		int age = random.nextInt((65 - 25) + 1) + 25;
-		double salary = (double) random.nextInt((200000 - 60000) + 1) + 60000;
+		double salary = (double) random.nextInt((200000 - 60000) / 10000 + 1) * 10000 + 60000;;
 		Pilot pilot = new Pilot(rng.generateFirstName(), rng.generateLastName(), age, salary);
 		return pilot;
 	}
