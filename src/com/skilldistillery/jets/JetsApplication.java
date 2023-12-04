@@ -17,7 +17,7 @@ public class JetsApplication {
 		// Create instances of different Jet types-
 		Jet c17 = new CargoJet("C17", 500.0, 2400.0, 218_000_000.0, new Pilot().generateRandomPilot(), 80.0);
 		Jet c130 = new CargoJet("C130", 340.0, 2000.0, 100_000_000.0, new Pilot().generateRandomPilot(), 23.0);
-		Jet f22 = new FighterJet("F22", 2414, 1800, 150_000_000, new Pilot().generateRandomPilot(), 90, 900);
+		Jet f22 = new FighterJet("F22", 2400, 1800, 150_000_000, new Pilot().generateRandomPilot(), 90, 900);
 		Jet f35 = new FighterJet("F35", 1200, 1500, 90_000_000, new Pilot().generateRandomPilot(), 100, 1000);
 		Jet boeing737 = new PassengerJet("737", 600, 3000, 90_000_000, new Pilot().generateRandomPilot());
 
@@ -79,7 +79,7 @@ public class JetsApplication {
 						System.out.println("Invalid choice. Please try again.");
 						break;
 					}
-				} while (jetChoice != 4);
+				} while (jetChoice != 1 && jetChoice !=2 && jetChoice != 3 && jetChoice != 4);
 				break;
 			case 8:
 				removeJetFromFleet(airfield, scanner);
